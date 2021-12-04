@@ -5,7 +5,7 @@ lst_int = [int(item) for item in lst] # перевод в формат int
 
 amount = len(number)# узнаём количество цифр 
 
-effect = input("Введите номер действия: ")
+#effect = input("Введите номер действия: ") !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 def space (lst): # выведение через пробел №1
@@ -46,6 +46,20 @@ def Addition_of_even (lst_int): # сумма чётных №5
 #Addition_of_even(lst_int)
 
 
+def Even_rank (number): # сумма цифр в чётных разрядах №6
+	n = int(number)
+	k = 0 
+	z = 0
+	while n>0:
+		x = n % 10 
+		if k % 2 == 0:
+			z += x
+		n = n // 10 
+		k += 1 
+	print(z)
+#Even_rank(number)
+
+
 def multiplication_of_odd (lst_int): # произведение нечётных цифр №7 
 	answer = 1
 	for x in lst_int:
@@ -74,6 +88,38 @@ def max_min (lst_int, amount): # аксимальнная и минимальн�
 #max_min(lst_int, amount)
 
 
+def Max_discharge(number): # номер разряда с максимальной цифрой №10
+	n = int(number)
+	maxi = 0 
+	raz_max = 0
+	raz = 0
+	while n>0:
+		x = n % 10 
+		if x > maxi:
+			maxi = x
+			raz_max = raz
+		n = n // 10 
+		raz += 1
+	print(raz_max)
+#Max_discharge(number)
+
+
+def Min_discharge(number): # номер разряда с минимальной цифрой №11
+	n = int(number)
+	mini = 9 
+	raz_min = 0
+	raz = 0
+	while n>0:
+		x = n % 10 
+		if x < mini:
+			mini = x
+			raz_min = raz
+		n = n // 10 
+		raz += 1
+	print(raz_min)
+#Min_discharge(number)
+
+
 def Average (lst_int, amount): #среднее арифметическое №14
 	answer = 0
 	for x in lst_int:
@@ -95,7 +141,7 @@ elif effect == "4":
 elif effect == "5":
 	Addition_of_even(lst_int)
 elif effect == "6":
-	print("Этого я пока не умею")
+	Even_rank(number)
 elif effect == "7":
 	multiplication_of_odd(lst_int)
 elif effect == "8":
@@ -103,9 +149,9 @@ elif effect == "8":
 elif effect == "9":
 	max_min(lst_int, amount)
 elif effect == "10":
-	print("Этого я пока не умею")
+	Max_discharge(number)
 elif effect == "11":
-	print("Этого я пока не умею")
+	Min_discharge(number)
 elif effect == "12":
 	print("Этого я пока не умею")
 elif effect == "13":
